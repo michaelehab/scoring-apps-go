@@ -17,7 +17,6 @@ package subscriber
 import (
 	"encoding/json"
 	sdkConfig "github.com/project-alvarium/alvarium-sdk-go/pkg/config"
-	logging "github.com/project-alvarium/provider-logging/pkg/config"
 	"github.com/project-alvarium/scoring-apps-go/internal/config"
 )
 
@@ -25,7 +24,7 @@ type ApplicationConfig struct {
 	Database config.DatabaseInfo `json:"database,omitempty"`
 	Sdk      sdkConfig.SdkInfo   `json:"sdk,omitempty"`
 	Stream   config.PubSubInfo   `json:"stream,omitempty"`
-	Logging  logging.LoggingInfo `json:"logging,omitempty"`
+	Logging  sdkConfig.LoggingInfo `json:"logging,omitempty"`
 	Key      string              `json:"preSharedKey,omitempty"` // Key is for IOTA support, shared key. Needs to be moved into SDK IotaStreamConfig
 }
 

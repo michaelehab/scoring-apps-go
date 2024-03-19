@@ -16,8 +16,8 @@ package calculator
 
 import (
 	"context"
-	logInterface "github.com/project-alvarium/provider-logging/pkg/interfaces"
-	"github.com/project-alvarium/provider-logging/pkg/logging"
+	"log/slog"
+	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
 	"github.com/project-alvarium/scoring-apps-go/internal/calculator/types"
 	"sync"
 	"time"
@@ -34,11 +34,11 @@ const (
 type Collector struct {
 	chPub  chan string
 	chSub  chan string
-	logger logInterface.Logger
+	logger interfaces.Logger
 	keyMap *types.KeyMap
 }
 
-func NewCollector(chKeys chan string, chPub chan string, logger logInterface.Logger) Collector {
+func NewCollector(chKeys chan string, chPub chan string, logger interfaces.Logger) Collector {
 	return Collector{
 		chPub:  chPub,
 		chSub:  chKeys,
@@ -87,7 +87,7 @@ func (c *Collector) BootstrapHandler(ctx context.Context, wg *sync.WaitGroup) bo
 
 		<-ctx.Done()
 		cancelled = true
-		c.logger.Write(logging.InfoLevel, "shutdown received")
+		c.logger.Write(slog.LevelInfo, "shutdown received")
 	}()
 	return true
 }

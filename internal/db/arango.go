@@ -19,7 +19,7 @@ import (
 	"errors"
 	"github.com/arangodb/go-driver"
 	"github.com/arangodb/go-driver/http"
-	logInterface "github.com/project-alvarium/provider-logging/pkg/interfaces"
+	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
 	"github.com/project-alvarium/scoring-apps-go/internal/config"
 	"github.com/project-alvarium/scoring-apps-go/pkg/documents"
 )
@@ -30,10 +30,10 @@ import (
 type ArangoClient struct {
 	cfg      config.ArangoConfig
 	instance driver.Client
-	logger   logInterface.Logger
+	logger   interfaces.Logger
 }
 
-func NewArangoClient(configs []config.DatabaseInfo, logger logInterface.Logger) (*ArangoClient, error) {
+func NewArangoClient(configs []config.DatabaseInfo, logger interfaces.Logger) (*ArangoClient, error) {
 	client := ArangoClient{
 		logger: logger,
 	}

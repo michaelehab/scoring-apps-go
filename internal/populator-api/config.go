@@ -17,7 +17,6 @@ package populator_api
 import (
 	"encoding/json"
 	SdkConfig "github.com/project-alvarium/alvarium-sdk-go/pkg/config"
-	LoggingConfig "github.com/project-alvarium/provider-logging/pkg/config"
 	"github.com/project-alvarium/scoring-apps-go/internal/config"
 )
 
@@ -27,7 +26,7 @@ type ApplicationConfig struct {
 	Databases []config.DatabaseInfo     `json:"databases,omitempty"`
 	Endpoint  SdkConfig.ServiceInfo     `json:"endpoint,omitempty"`
 	Hash      SdkConfig.HashInfo        `json:"hash,omitempty"`
-	Logging   LoggingConfig.LoggingInfo `json:"logging,omitempty"`
+	Logging   SdkConfig.LoggingInfo `json:"logging,omitempty"`
 }
 
 func (a ApplicationConfig) AsString() string {
