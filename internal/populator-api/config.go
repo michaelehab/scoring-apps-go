@@ -16,6 +16,7 @@ package populator_api
 
 import (
 	"encoding/json"
+
 	SdkConfig "github.com/project-alvarium/alvarium-sdk-go/pkg/config"
 	"github.com/project-alvarium/scoring-apps-go/internal/config"
 )
@@ -23,9 +24,9 @@ import (
 // ApplicationConfig serves as the root node for configuration and contains targeted child types with specialized
 // concerns.
 type ApplicationConfig struct {
-	Databases []config.DatabaseInfo     `json:"databases,omitempty"`
-	Endpoint  SdkConfig.ServiceInfo     `json:"endpoint,omitempty"`
-	Hash      SdkConfig.HashInfo        `json:"hash,omitempty"`
+	Databases []config.DatabaseInfo `json:"databases,omitempty"`
+	Endpoint  SdkConfig.ServiceInfo `json:"endpoint,omitempty"`
+	Hash      SdkConfig.HashInfo    `json:"hash,omitempty"`
 	Logging   SdkConfig.LoggingInfo `json:"logging,omitempty"`
 }
 

@@ -18,6 +18,7 @@ import (
 	"context"
 	"fmt"
 	"log/slog"
+
 	"github.com/arangodb/go-driver"
 	"github.com/arangodb/go-driver/http"
 	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"

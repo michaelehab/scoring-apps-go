@@ -14,7 +14,6 @@
 
 package populator_api
 
-
 import (
 	"context"
 	"log/slog"

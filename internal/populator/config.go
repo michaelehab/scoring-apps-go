@@ -24,8 +24,8 @@ import (
 // ApplicationConfig serves as the root node for configuration and contains targeted child types with specialized
 // concerns.
 type ApplicationConfig struct {
-	Databases []config.DatabaseInfo     `json:"databases,omitempty"`
-	Hash      SdkConfig.HashInfo        `json:"hash,omitempty"`
+	Databases []config.DatabaseInfo `json:"databases,omitempty"`
+	Hash      SdkConfig.HashInfo    `json:"hash,omitempty"`
 	Logging   SdkConfig.LoggingInfo `json:"logging,omitempty"`
 }
 

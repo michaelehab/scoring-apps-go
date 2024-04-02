@@ -16,15 +16,16 @@ package calculator
 
 import (
 	"encoding/json"
+
 	sdkConfig "github.com/project-alvarium/alvarium-sdk-go/pkg/config"
 	"github.com/project-alvarium/scoring-apps-go/internal/config"
 )
 
 type ApplicationConfig struct {
-	Database config.DatabaseInfo `json:"database,omitempty"`
-	Stream   config.PubSubInfo   `json:"stream,omitempty"`
+	Database config.DatabaseInfo   `json:"database,omitempty"`
+	Stream   config.PubSubInfo     `json:"stream,omitempty"`
 	Logging  sdkConfig.LoggingInfo `json:"logging,omitempty"`
-	Policy   config.PolicyInfo   `json:"policy,omitempty"`
+	Policy   config.PolicyInfo     `json:"policy,omitempty"`
 }
 
 func (a ApplicationConfig) AsString() string {

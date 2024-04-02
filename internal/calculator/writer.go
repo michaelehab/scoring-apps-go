@@ -19,6 +19,7 @@ import (
 	"fmt"
 	"log/slog"
 	"sync"
+
 	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
 )
 

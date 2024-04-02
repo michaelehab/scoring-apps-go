@@ -18,15 +18,16 @@ import (
 	"encoding/json"
 	"fmt"
 	"log/slog"
+	"net/http"
+	"strconv"
+	"time"
+
 	"github.com/gorilla/mux"
 	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
 	"github.com/project-alvarium/scoring-apps-go/internal/db"
 	"github.com/project-alvarium/scoring-apps-go/internal/hashprovider"
 	"github.com/project-alvarium/scoring-apps-go/internal/models"
 	"github.com/project-alvarium/scoring-apps-go/pkg/responses"
-	"net/http"
-	"strconv"
-	"time"
 )
 
 const (

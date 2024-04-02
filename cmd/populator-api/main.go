@@ -17,15 +17,16 @@ package main
 import (
 	"context"
 	"flag"
-	"github.com/gorilla/mux"
 	"log/slog"
+	"os"
+
+	"github.com/gorilla/mux"
 	sdkConfig "github.com/project-alvarium/alvarium-sdk-go/pkg/config"
 	"github.com/project-alvarium/alvarium-sdk-go/pkg/factories"
 	"github.com/project-alvarium/scoring-apps-go/internal/bootstrap"
 	"github.com/project-alvarium/scoring-apps-go/internal/config"
 	"github.com/project-alvarium/scoring-apps-go/internal/db"
 	populator_api "github.com/project-alvarium/scoring-apps-go/internal/populator-api"
-	"os"
 )
 
 func main() {

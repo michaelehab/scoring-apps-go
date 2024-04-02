@@ -17,6 +17,7 @@ package db
 import (
 	"context"
 	"errors"
+
 	"github.com/arangodb/go-driver"
 	"github.com/arangodb/go-driver/http"
 	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
@@ -24,7 +25,7 @@ import (
 	"github.com/project-alvarium/scoring-apps-go/pkg/documents"
 )
 
-//TODO: This Client is shared between the Populator and Populator-API. Meanwhile both the Subscriber and Calculator ALSO
+// TODO: This Client is shared between the Populator and Populator-API. Meanwhile both the Subscriber and Calculator ALSO
 // have their own respective Arango clients. Need to look at how this sprawl can be refactored to reduce duplication
 // and maintenance overhead.
 type ArangoClient struct {

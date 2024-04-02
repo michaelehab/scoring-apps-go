@@ -18,6 +18,7 @@ import (
 	"context"
 	"log/slog"
 	"sync"
+
 	SdkConfig "github.com/project-alvarium/alvarium-sdk-go/pkg/config"
 	SdkInterfaces "github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
 	"github.com/project-alvarium/scoring-apps-go/internal/pubsub/factories"

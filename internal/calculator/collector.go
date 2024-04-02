@@ -17,10 +17,11 @@ package calculator
 import (
 	"context"
 	"log/slog"
-	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
-	"github.com/project-alvarium/scoring-apps-go/internal/calculator/types"
 	"sync"
 	"time"
+
+	"github.com/project-alvarium/alvarium-sdk-go/pkg/interfaces"
+	"github.com/project-alvarium/scoring-apps-go/internal/calculator/types"
 )
 
 const (
