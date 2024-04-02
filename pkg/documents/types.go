@@ -40,15 +40,16 @@ type Data struct {
 
 // Annotation represents a document in the "annotation" vertex collection
 type Annotation struct {
-	Key         string             `json:"_key,omitempty"`      // Key uniquely identifies the document in the database
-	DataRef     string             `json:"dataRef,omitempty"`   // DataRef points to the key of the data being annotated
-	Hash        contracts.HashType `json:"hash,omitempty"`      // Hash identifies which algorithm was used to construct the hash
-	Host        string             `json:"host,omitempty"`      // Host is the hostname of the node making the annotation
-	Tag         string             `json:"Tag,omitempty"`       // Tag is the hash of the source artifact tag that emitted data being annotated
-	Kind        string             `json:"type,omitempty"`      // Kind indicates what kind of annotation this is. Defined as string to allow for annotation types outside of the Alvarium Go SDK
-	Signature   string             `json:"signature,omitempty"` // Signature contains the signature of the party making the annotation
-	IsSatisfied bool               `json:"isSatisfied"`         // IsSatisfied indicates whether the criteria defining the annotation were fulfilled
-	Timestamp   time.Time          `json:"timestamp,omitempty"` // Timestamp indicates when the annotation was created
+	Key         string              `json:"_key,omitempty"`    // Key uniquely identifies the document in the database
+	DataRef     string              `json:"dataRef,omitempty"` // DataRef points to the key of the data being annotated
+	Hash        contracts.HashType  `json:"hash,omitempty"`    // Hash identifies which algorithm was used to construct the hash
+	Host        string              `json:"host,omitempty"`    // Host is the hostname of the node making the annotation
+	Tag         string              `json:"tag,omitempty"`     // Tag is the hash of the source artifact tag that emitted data being annotated
+	Layer       contracts.LayerType `json:"layer,omitempty"`
+	Kind        string              `json:"type,omitempty"`      // Kind indicates what kind of annotation this is. Defined as string to allow for annotation types outside of the Alvarium Go SDK
+	Signature   string              `json:"signature,omitempty"` // Signature contains the signature of the party making the annotation
+	IsSatisfied bool                `json:"isSatisfied"`         // IsSatisfied indicates whether the criteria defining the annotation were fulfilled
+	Timestamp   time.Time           `json:"timestamp,omitempty"` // Timestamp indicates when the annotation was created
 }
 
 // NewAnnotation will map an Alvarium SDK annotation into an Annotation document
@@ -59,6 +60,7 @@ func NewAnnotation(a contracts.Annotation) Annotation {
 		Hash:        a.Hash,
 		Host:        a.Host,
 		Tag:         a.Tag,
+		Layer:       a.Layer,
 		Kind:        string(a.Kind),
 		Signature:   a.Signature,
 		IsSatisfied: a.IsSatisfied,
